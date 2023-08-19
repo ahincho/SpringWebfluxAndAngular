@@ -19,6 +19,7 @@ Before you begin, make sure you have the following software installed on your ma
 1. Clone the backend repository:
 
    git clone https://github.com/ahincho/SpringWebfluxAndAngular.git
+
    cd SpringWebfluxAndAngular/mongodb-reactive-spring-boot
 
 2. Build and run the Spring Boot application.
@@ -30,6 +31,7 @@ Before you begin, make sure you have the following software installed on your ma
 1. Clone the frontend repository:
 
     git clone https://github.com/ahincho/SpringWebfluxAndAngular.git
+
     cd SpringWebfluxAndAngular/angular-15-crud-example
 
 2. Install dependencies:
