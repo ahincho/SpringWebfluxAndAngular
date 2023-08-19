@@ -42,7 +42,7 @@ Before you begin, make sure you have the following software installed on your ma
 
    ng serve
 
-4. Access the frontend at http://localhost:4200.
+4. Access the frontend at http://localhost:8081.
 
 ## Usage
 
