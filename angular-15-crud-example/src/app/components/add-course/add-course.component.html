@@ -1,0 +1,42 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="course.name"
+          name="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="course.description"
+          name="description"
+        />
+      </div>
+      <div class="form-group">
+        <label for="classroom">Classroom</label>
+        <select class="form-control" id="classroom" [(ngModel)]="course.classroom" name="classroom" required>
+          <option value="A01">A01</option>
+          <option value="B01">B01</option>
+          <option value="C01">C01</option>
+          <option value="D01">D01</option>
+          <option value="E01">E01</option>
+        </select>
+      </div>
+      <button (click)="saveCourse()" class="btn btn-success">Submit</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>Course was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="saveCourse()">Add</button>
+    </div>
+  </div>
+</div>

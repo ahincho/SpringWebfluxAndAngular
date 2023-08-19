@@ -1,0 +1,89 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentCourse.id">
+    <h4>Course</h4>
+    <div>
+      <label><strong>Name:</strong></label> {{ currentCourse.name }}
+    </div>
+    <div>
+      <label><strong>Description:</strong></label>
+      {{ currentCourse.description }}
+    </div>
+    <div>
+      <label><strong>Classroom:</strong></label>
+      {{ currentCourse.classroom }}
+    </div>
+    <a
+      class="badge badge-warning"
+      routerLink="/courses/{{ currentCourse.id }}"
+    >
+      Edit
+    </a>
+  </div>
+
+  <div *ngIf="!currentCourse">
+    <br />
+    <p>Please click on a Course...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentCourse.id" class="edit-form">
+    <h4>Tutorial</h4>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="currentCourse.name"
+          name="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentCourse.description"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="classroom">Classroom</label>
+        <select
+          class="form-control"
+          id="classroom"
+          [(ngModel)]="currentCourse.classroom"
+          name="classroom"
+        >
+          <option value="A01">A01</option>
+          <option value="B01">B01</option>
+          <option value="C01">C01</option>
+          <option value="D01">D01</option>
+          <option value="E01">E01</option>
+        </select>
+      </div>
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deleteCourse()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateCourse(currentCourse)"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentCourse.id">
+    <br />
+    <p>Cannot access this Course...</p>
+  </div>
+</ng-template>
